@@ -25,25 +25,25 @@ function FormularioContato() {
     {
       icon: <FaLinkedin />,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/seu-perfil",
+      url: "https://www.linkedin.com/in/breno-souza-20976a177/",
       color: "#0A66C2"
     },
     {
       icon: <FaGithub />,
       label: "GitHub",
-      url: "https://github.com/seu-usuario",
+      url: "https://github.com/bs6096098",
       color: "#333"
     },
     {
       icon: <FaWhatsapp />,
       label: "WhatsApp",
-      url: "https://wa.me/seu-numero",
+      url: "https://wa.me/5535997603565",
       color: "#25D366"
     },
     {
       icon: <FaEnvelope />,
       label: "Email",
-      url: "mailto:seu-email@email.com",
+      url: "mailto:bs6096098@email.com",
       color: "#EA4335"
     }
   ];
