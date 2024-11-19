@@ -1,0 +1,179 @@
+.experiencia-section {
+  padding: 80px 0;
+  background: #0A0F16;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experiencia-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experiencia-container h2 {
+  color: #E6EDF3;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title-underline {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #4FC1FF;
+  border-radius: 2px;
+  display: block;
+}
+
+.experiencia-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 193, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(79, 193, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experiencia-card:hover .card-glow {
+  opacity: 1;
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(79, 193, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  color: #4FC1FF;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.experiencia-card:hover .icon-wrapper {
+  background: rgba(79, 193, 255, 0.2);
+}
+
+.experiencia-card:hover .icon {
+  transform: scale(1.1);
+}
+
+.timeline-marker {
+  margin-bottom: 1.5rem;
+}
+
+.date {
+  background: rgba(79, 193, 255, 0.1);
+  color: #4FC1FF;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.content-wrapper h3 {
+  color: #E6EDF3;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-wrapper h4 {
+  color: #4FC1FF;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.content-wrapper p {
+  color: #A3B3BC;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech-tag {
+  background: rgba(79, 193, 255, 0.1);
+  color: #4FC1FF;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(79, 193, 255, 0.2);
+}
+
+.tech-tag:hover {
+  background: rgba(79, 193, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .experiencia-section {
+    padding: 60px 0;
+  }
+
+  .experiencia-card {
+    padding: 2rem;
+  }
+
+  .content-wrapper h3 {
+    font-size: 1.5rem;
+  }
+
+  .content-wrapper p {
+    font-size: 1rem;
+  }
+}
+
+.content-wrapper {
+  text-align: center;
+}

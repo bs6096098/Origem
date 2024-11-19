@@ -1,0 +1,178 @@
+.contato-section {
+  padding: 80px 0;
+  background: #0A0F16;
+  position: relative;
+}
+
+.contato-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contato-container h2 {
+  color: #E6EDF3;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title-underline {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #4FC1FF;
+  border-radius: 2px;
+  display: block;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contato-info {
+  color: #A3B3BC;
+}
+
+.contato-info h3 {
+  color: #E6EDF3;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contato-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  color: #E6EDF3;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+  border-color: var(--social-color);
+}
+
+.social-link svg {
+  font-size: 1.2rem;
+  color: var(--social-color);
+}
+
+.contato-form {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(79, 193, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #E6EDF3;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4FC1FF;
+  background: rgba(79, 193, 255, 0.05);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #4FC1FF, #63D3FF);
+  border: none;
+  border-radius: 8px;
+  color: #0A0F16;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  animation: btnGlow 3s infinite;
+}
+
+@keyframes btnGlow {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contato-form {
+    padding: 30px 20px;
+  }
+
+  .contato-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+}

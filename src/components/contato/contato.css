@@ -1,0 +1,132 @@
+.contato-section {
+  padding: 8rem 5%;
+  background: linear-gradient(180deg, #0A0F16 0%, #0d1218 100%);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.contato-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(79, 193, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(79, 193, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: top;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.contato-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contato-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #E6EDF3;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contato-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #4FC1FF;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(79, 193, 255, 0.5);
+}
+
+.contato-subtitle {
+  color: #A3B3BC;
+  font-size: 1.1rem;
+}
+
+.contato-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contato-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.contato-item {
+  background: rgba(79, 193, 255, 0.02);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(79, 193, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contato-item:hover {
+  transform: translateY(-5px);
+  background: rgba(79, 193, 255, 0.05);
+  border-color: rgba(79, 193, 255, 0.2);
+}
+
+.contato-item i {
+  font-size: 2rem;
+  color: #4FC1FF;
+  margin-bottom: 1rem;
+}
+
+.contato-item h3 {
+  color: #E6EDF3;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contato-item a {
+  color: #A3B3BC;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.contato-item a:hover {
+  color: #4FC1FF;
+}
+
+.contato-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .contato-section {
+    padding: 4rem 1rem;
+  }
+
+  .contato-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+  
+
+
+
+  

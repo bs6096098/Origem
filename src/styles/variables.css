@@ -1,0 +1,9 @@
+:root {
+  --bg-primary: #0D1117;
+  --bg-secondary: #161B22;
+  --text-primary: #E6EDF3;
+  --text-secondary: #A3B3BC;
+  --accent: #4FC1FF;
+  --accent-dark: #3DA8E8;
+  --border-color: rgba(79, 193, 255, 0.3);
+} 
