@@ -41,7 +41,7 @@ function Contato() {
             <i className="fab fa-whatsapp"></i>
             <h3>WhatsApp</h3>
             <a href="https://wa.me/5535997603565" target="_blank" rel="noopener noreferrer">
-              +55 (11) 99999-9999
+              +55 (35) 99760-3565
             </a>
           </div>
 
@@ -49,7 +49,7 @@ function Contato() {
             <i className="fab fa-linkedin-in"></i>
             <h3>LinkedIn</h3>
             <a href="https://www.linkedin.com/in/breno-souza-20976a177/" target="_blank" rel="noopener noreferrer">
-              /in/seu-perfil
+              /in/breno-souza-20976a177
             </a>
           </div>
 
@@ -57,7 +57,7 @@ function Contato() {
             <i className="fab fa-github"></i>
             <h3>GitHub</h3>
             <a href="https://github.com/bs6096098" target="_blank" rel="noopener noreferrer">
-              @seu-usuario
+              @bs6096098
             </a>
           </div>
         </div>
