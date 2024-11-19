@@ -10,17 +10,21 @@ function ScrollObserver() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const ratio = entry.intersectionRatio;
+        const minOpacity = window.innerWidth <= 768 ? 0.7 : 0;
+        
         if (entry.isIntersecting) {
-          const ratio = entry.intersectionRatio;
-          const minOpacity = window.innerWidth <= 768 ? 0.7 : 0;
           entry.target.style.opacity = Math.max(ratio, minOpacity).toString();
           entry.target.style.transform = `translateY(${(1 - ratio) * 50}px)`;
           
           if (ratio > 0.5) {
             entry.target.classList.add('is-visible');
-          } else {
-            entry.target.classList.remove('is-visible');
           }
+        } else {
+          // Resetar a transição quando a seção não estiver visível
+          entry.target.style.opacity = '0';
+          entry.target.style.transform = 'translateY(50px)';
+          entry.target.classList.remove('is-visible');
         }
       });
     }, observerOptions);
