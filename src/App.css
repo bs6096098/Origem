@@ -103,6 +103,7 @@ html {
 @media (max-width: 768px) {
   section {
     padding: 20px;
+    opacity: 0.9;
   }
 }
 
