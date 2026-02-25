@@ -21,7 +21,9 @@ function App() {
   if (isLoading) {
     return (
       <div className="loading-screen">
-        <div className="loader"></div>
+        <div className="loader">
+          <span className="loader-text">loading</span>
+        </div>
       </div>
     );
   }

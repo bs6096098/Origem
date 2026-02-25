@@ -1,157 +1,143 @@
+/* ========= Futuristic Stack Carousel ========= */
 .tech-section {
-    width: 100%;
+  width: 100%;
+  padding: 80px 0;
+  background-color: var(--bg-primary);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.tech-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.tech-content p {
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  width: 160px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gradient-overlay.left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary) 0%, transparent 100%);
+}
+
+.gradient-overlay.right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary) 0%, transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  will-change: transform;
+}
+
+.tech-card {
+  flex: 0 0 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--tech-color) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-card.hovered {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.tech-card.hovered::before {
+  opacity: 0.06;
+}
+
+.tech-icon-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.tech-icon {
+  font-size: 2rem;
+  color: var(--tech-color);
+  transition: all 0.3s var(--ease-out);
+  opacity: 0.8;
+}
+
+.tech-card.hovered .tech-icon {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.tech-name {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+
+.tech-card.hovered .tech-name {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .tech-section {
     padding: 60px 0;
-    background-color: #0A0F16;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
   }
-  
-  .tech-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .tech-content h2 {
-    color: #E6EDF3;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tech-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      #4FC1FF,
-      transparent
-    );
-    border-radius: 2px;
-  }
-  
-  .tech-content p {
-    color: #A3B3BC;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-  }
-  
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
-  }
-  
-  .gradient-overlay {
-    position: absolute;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-  }
-  
-  .gradient-overlay.left {
-    left: 0;
-    background: linear-gradient(to right, #0A0F16 0%, transparent 100%);
-  }
-  
-  .gradient-overlay.right {
-    right: 0;
-    background: linear-gradient(to left, #0A0F16 0%, transparent 100%);
-  }
-  
-  .carousel-track {
-    display: flex;
-    gap: 20px;
-    will-change: transform;
-  }
-  
+
   .tech-card {
-    flex: 0 0 140px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 16px;
-    padding: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    flex: 0 0 100px;
+    height: 100px;
   }
-  
-  .tech-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at center,
-      var(--tech-color) 0%,
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .tech-card.hovered {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-  }
-  
-  .tech-card.hovered::before {
-    opacity: 0.1;
-  }
-  
-  .tech-icon-wrapper {
-    position: relative;
-    z-index: 1;
-  }
-  
+
   .tech-icon {
-    font-size: 2.5rem;
-    color: var(--tech-color);
-    transition: all 0.3s ease;
+    font-size: 1.5rem;
   }
-  
-  .tech-card.hovered .tech-icon {
-    transform: scale(1.1);
+
+  .gradient-overlay {
+    width: 80px;
   }
-  
-  .tech-name {
-    color: #E6EDF3;
-    font-size: 0.9rem;
-    font-weight: 500;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .tech-card.hovered .tech-name {
-    color: var(--tech-color);
-  }
-  
-  @media (max-width: 768px) {
-    .tech-card {
-      flex: 0 0 120px;
-      height: 120px;
-    }
-  
-    .tech-icon {
-      font-size: 2rem;
-    }
-  }
+}

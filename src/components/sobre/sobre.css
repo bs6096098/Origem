@@ -1,182 +1,158 @@
+/* ========= Futuristic About Section ========= */
 .sobre-section {
-  padding: 80px 0;
-  background: #0A0F16;
+  padding: 100px 0;
+  background: var(--bg-primary);
   position: relative;
   overflow: hidden;
 }
 
 .sobre-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-.sobre-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.sobre-header h2 {
-  color: #E6EDF3;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-}
-
-.title-bar {
-  width: 60px;
-  height: 3px;
-  background: #4FC1FF;
-  margin: 0 auto;
-  border-radius: 2px;
+  padding: 0 24px;
 }
 
 .sobre-content {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 64px;
 }
 
 .sobre-text {
-  max-width: 800px;
+  max-width: 680px;
   margin: 0 auto;
   text-align: center;
 }
 
 .sobre-intro {
-  color: #4FC1FF;
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
   font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .sobre-description {
-  color: #A3B3BC;
-  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.8;
 }
 
+/* Stats Grid */
 .stats-grid {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   margin: 0 auto;
   width: 100%;
-  flex-wrap: nowrap;
 }
 
 .stat-card {
   flex: 1;
-  min-width: 200px;
-  max-width: 250px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  padding: 25px 15px;
+  min-width: 180px;
+  max-width: 220px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 28px 16px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s var(--ease-out);
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--border);
 }
 
 .stat-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(
     circle at center,
     var(--stat-color) 0%,
     transparent 70%
   );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
 }
 
 .stat-card:hover::before {
-  opacity: 0.1;
+  opacity: 0.06;
 }
 
 .stat-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--stat-color);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
 }
 
 .stat-number {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #E6EDF3;
-  margin-bottom: 0.5rem;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.03em;
 }
 
 .stat-label {
-  color: #A3B3BC;
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
 }
 
+/* Interests */
 .interests-section {
   text-align: center;
 }
 
 .interests-section h3 {
-  color: #E6EDF3;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .interests-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
   justify-content: center;
 }
 
 .interest-tag {
-  background: rgba(79, 193, 255, 0.1);
-  color: #4FC1FF;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(79, 193, 255, 0.2);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  transition: all 0.3s var(--ease-out);
+  border: 1px solid var(--border);
+  font-weight: 500;
 }
 
 .interest-tag:hover {
-  background: rgba(79, 193, 255, 0.2);
-  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  color: var(--accent);
+  background: var(--accent-dim);
 }
 
+/* Responsive */
 @media (max-width: 968px) {
   .stats-grid {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    gap: 12px;
   }
 
   .stat-card {
-    min-width: 160px;
-    flex: 1 1 calc(50% - 15px);
+    min-width: 140px;
+    flex: 1 1 calc(50% - 12px);
   }
 }
 
@@ -189,27 +165,23 @@
 
 @media (max-width: 768px) {
   .sobre-section {
-    padding: 60px 0;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    padding: 72px 0;
   }
 
   .sobre-intro {
-    font-size: 1.2rem;
-  }
-
-  .sobre-description {
     font-size: 1rem;
   }
 
+  .sobre-description {
+    font-size: 0.9rem;
+  }
+
   .interests-grid {
-    gap: 10px;
+    gap: 8px;
   }
 
   .interest-tag {
-    padding: 8px 16px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
   }
-} 
+}  
