@@ -1,139 +1,129 @@
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* ========= App Shell ========= */
 .App {
   position: relative;
   width: 100%;
-  background: #0A0F16;
+  min-height: 100vh;
+  background: var(--bg-primary);
 }
 
 .content-container {
   position: relative;
   z-index: 1;
-  background: #0A0F16;
 }
 
+/* ========= Loading Screen ========= */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  z-index: 9999;
+}
+
+.loader {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.loader::before {
+  border-top-color: var(--accent);
+  animation: rotate 1s linear infinite;
+}
+
+.loader::after {
+  border-bottom-color: var(--accent-secondary);
+  animation: rotate 1.5s linear infinite reverse;
+}
+
+.loader-text {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ========= Section Global Styles ========= */
 section {
   position: relative;
   width: 100%;
-  background: #0A0F16;
-}
-
-.perfil-section {
-  height: 100vh;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0 5%;
-  background: linear-gradient(180deg, #0A0F16 0%, #0d1218 100%);
-}
-
-.stack-carousel-section {
-  min-height: auto;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-}
-
-.sobre-section {
-  min-height: auto;
-  padding: 40px 5%;
-  margin: 0;
-  background: linear-gradient(180deg, #0d1218 0%, #0A0F16 100%);
-}
-
-.experiencia-section,
-.habilidades-section,
-.contato-section {
-  min-height: auto;
-  padding: 40px 5%;
-  margin: 0;
 }
 
 section h2 {
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  color: #E6EDF3;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: var(--text-primary);
   margin-bottom: 3rem;
   position: relative;
   text-align: center;
   width: 100%;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 section h2::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #4FC1FF,
-    transparent
-  );
-  border-radius: 2px;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  opacity: 0.6;
 }
 
 .section-content {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-.fade-in {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 20px;
-  }
-}
-
-.content-container section {
+.section-wrapper {
   position: relative;
-  z-index: 1;
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.content-container section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* ========= Scrollbar ========= */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(10, 15, 22, 0.8);
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(79, 193, 255, 0.3);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(79, 193, 255, 0.5);
+  background: rgba(0, 240, 255, 0.2);
 }
 
+/* ========= Utility ========= */
 .title-underline {
   display: none;
 }
@@ -142,4 +132,24 @@ html {
   width: 100%;
   text-align: center;
   margin-bottom: 3rem;
+}
+
+/* ========= Section transitions ========= */
+.content-container section {
+  position: relative;
+  z-index: 1;
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.content-container section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 768px) {
+  section {
+    padding: 16px;
+  }
 }

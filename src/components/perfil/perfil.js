@@ -25,43 +25,43 @@ function Perfil() {
             background: {
               color: "transparent",
             },
-            fpsLimit: 120,
+            fpsLimit: 60,
             particles: {
               color: {
-                value: "#4FC1FF",
+                value: "#00f0ff",
               },
               links: {
-                color: "#4FC1FF",
-                distance: 150,
+                color: "#00f0ff",
+                distance: 180,
                 enable: true,
-                opacity: 0.1,
-                width: 1,
+                opacity: 0.04,
+                width: 0.5,
               },
               move: {
                 enable: true,
-                speed: 1,
+                speed: 0.4,
                 direction: "none",
-                random: false,
+                random: true,
                 straight: false,
                 outModes: {
-                  default: "bounce",
+                  default: "out",
                 },
               },
               number: {
                 density: {
                   enable: true,
-                  area: 800,
+                  area: 1200,
                 },
-                value: 80,
+                value: 40,
               },
               opacity: {
-                value: 0.5,
+                value: { min: 0.1, max: 0.3 },
               },
               shape: {
                 type: "circle",
               },
               size: {
-                value: { min: 1, max: 3 },
+                value: { min: 0.5, max: 1.5 },
               },
             },
             detectRetina: true,
@@ -72,19 +72,15 @@ function Perfil() {
                   mode: "grab",
                 },
                 onClick: {
-                  enable: true,
-                  mode: "push",
+                  enable: false,
                 },
               },
               modes: {
                 grab: {
-                  distance: 140,
+                  distance: 120,
                   links: {
-                    opacity: 0.5,
+                    opacity: 0.15,
                   },
-                },
-                push: {
-                  quantity: 4,
                 },
               },
             },
